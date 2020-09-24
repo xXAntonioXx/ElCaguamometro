@@ -1,0 +1,12 @@
+.nav {
+    margin: none;
+    padding:none;
+    width: 100%;
+    font-family: cursive;
+    color:white;
+    background-color: #ff1313;
+}
+
+.nav h1 {
+    margin: 0;;
+}
