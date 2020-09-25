@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Beer } from '../models/beer';
+import { BeerService } from '../services/beer.service';
 
 @Component({
   selector: 'app-beer-converter-form',
@@ -14,9 +15,14 @@ export class BeerConverterFormComponent implements OnInit {
     price: 35.5
   };
 
-  constructor() { }
+  constructor(private beerService: BeerService) { }
 
   ngOnInit(): void {
+    this.getBeer();
+  }
+
+  getBeer(): void{
+    this.beerService.getBeer().subscribe(BeerRes => this.beer = BeerRes[0]);
   }
 
 }

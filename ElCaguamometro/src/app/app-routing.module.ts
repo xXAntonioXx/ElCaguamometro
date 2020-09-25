@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [];
 
-import { TecateService } from './services/tecate.service';
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
