@@ -7,11 +7,13 @@ import { BeerConverterFormComponent } from './beer-converter-form/beer-converter
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ValidationsDirective } from './directives/validations.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BeerConverterFormComponent
+    BeerConverterFormComponent,
+    ValidationsDirective
   ],
   imports: [
     BrowserModule,

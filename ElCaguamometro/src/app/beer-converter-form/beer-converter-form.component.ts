@@ -15,6 +15,8 @@ export class BeerConverterFormComponent implements OnInit {
     price: 35.5
   };
 
+  userBeerInput = 0;
+
   constructor(private beerService: BeerService) { }
 
   ngOnInit(): void {
