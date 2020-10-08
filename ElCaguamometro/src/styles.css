@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: tecate;
+    src: url(assets/font/tecate.ttf) format("opentype")
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url(assets/font/OpenSans/OpenSans-Regular.ttf) format("opentype")
+}

@@ -1,0 +1,37 @@
+
+
+.amountInput {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.amountInput label{
+    text-align: left;
+    font-family: OpenSans;
+}
+
+h3{
+    font-family: OpenSans;
+}
+
+.resultOutput {
+    width: 100%;
+    text-align: center;
+}
+
+.resultOutput h4 {
+    font-size: 16vw;
+    font-family: OpenSans;
+}
+
+.invertFormButton {
+    border: none;
+    background: none;
+}
+
+.buttonContainer {
+    margin: 20px 0 20px 0;
+    width: 100%;
+    text-align: center;
+}
