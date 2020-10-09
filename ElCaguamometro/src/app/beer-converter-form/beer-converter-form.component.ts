@@ -30,7 +30,7 @@ export class BeerConverterFormComponent implements OnInit {
     this.beerService.getBeer().subscribe(BeerRes => this.beer = BeerRes[0]);
   }
 
-  toggleForm(){
+  toggleForm(): void{
     this.amountToMoney = !this.amountToMoney;
   }
 }
