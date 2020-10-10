@@ -8,12 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class BeerService {
 
-  private beerURL = 'http://localhost:3000/Caguamas/showCaguamaPrice';
+  private beerURL = 'http://localhost:3000/Caguamas';
   constructor(
     private http: HttpClient
   ) { }
 
-  getBeer(): Observable<Beer[]> {
-    return this.http.get<Beer[]>(this.beerURL);
+  getSpecificBeer(beerId: string): Observable<Beer>{
+    const specificBeerURL = `${this.beerURL}/showSpecificCaguamaPrice/${beerId}`;
+    return this.http.get<Beer>(specificBeerURL);
+  }
+  getBeers(): Observable<Beer[]> {
+    const allBeersURL = `${this.beerURL}/showCaguamaPrice`;
+    return this.http.get<Beer[]>(allBeersURL);
   }
 }

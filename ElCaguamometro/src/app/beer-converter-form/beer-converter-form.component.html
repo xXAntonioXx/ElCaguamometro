@@ -1,5 +1,11 @@
-<h4>Cerveza: {{beer.beer}}</h4>
-<!-- <h3>Precio: {{beer.price | number:'1.2-2'}}$</h3> -->
+<div class="d-flex justify-content-center">
+    <div class="card bg-light widthCard overlay" >
+        <div class="card-header text-center overlay">
+            <img src={{beer.image}} width="150px" height="150px" class="beerImage">
+            <h6>Cerveza: {{beer.beer}}</h6>
+        </div>
+    </div>
+</div>
 <div>
     <div *ngIf="amountToMoney; then amountToMoneyForm else moneyToAmountForm"></div>
     <ng-template #amountToMoneyForm>

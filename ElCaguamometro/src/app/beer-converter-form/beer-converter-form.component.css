@@ -46,3 +46,25 @@ h4{
     width: 100%;
     text-align: center;
 }
+
+.widthCard {
+    margin:10px 0 20px 0;
+    width: 225px;
+    cursor: pointer;
+}
+
+.widthCard:hover{
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+
+.beerImage {
+    margin-bottom: .75rem 1.25rem;
+    border-radius: 25rem;
+}
+
+.cardRow {
+    width: 100%;
+    text-align: center;
+}

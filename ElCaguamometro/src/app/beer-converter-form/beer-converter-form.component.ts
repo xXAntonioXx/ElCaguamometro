@@ -13,7 +13,8 @@ export class BeerConverterFormComponent implements OnInit {
     id: 'CaguamonLight',
     beer: 'CaguamonLight',
     price: 35.5,
-    container: 'caguamón'
+    container: 'caguamón',
+    image: ''
   };
 
   userBeerInput = 0;
@@ -27,7 +28,7 @@ export class BeerConverterFormComponent implements OnInit {
   }
 
   getBeer(): void{
-    this.beerService.getBeer().subscribe(BeerRes => this.beer = BeerRes[0]);
+    this.beerService.getBeers().subscribe(BeerRes => this.beer = BeerRes[0]);
   }
 
   toggleForm(): void{
