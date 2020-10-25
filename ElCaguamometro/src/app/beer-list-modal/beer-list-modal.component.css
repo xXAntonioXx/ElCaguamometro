@@ -1,0 +1,27 @@
+.beerModalTittle{
+    width: 100%;
+    text-align: center;
+}
+
+.beerImage{
+    border-radius: 10px;
+}
+
+.beerRowTemplate{
+    display: grid;
+    grid-template-columns: 30% auto;
+}
+
+.beerRowDetail{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.beerRowDetailPriceContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.cardSpace{
+    margin-bottom: 10px;
+}

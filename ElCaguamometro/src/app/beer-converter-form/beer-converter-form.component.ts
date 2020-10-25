@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Beer } from '../models/beer';
 import { BeerService } from '../services/beer.service';
+import { BeerListModalComponent } from '../beer-list-modal/beer-list-modal.component';
 
 @Component({
   selector: 'app-beer-converter-form',
@@ -9,6 +10,7 @@ import { BeerService } from '../services/beer.service';
 })
 export class BeerConverterFormComponent implements OnInit {
 
+  @ViewChild('beerListModal') beerListModal: BeerListModalComponent;
   beer: Beer = {
     id: 'CaguamonLight',
     beer: 'CaguamonLight',
@@ -33,5 +35,9 @@ export class BeerConverterFormComponent implements OnInit {
 
   toggleForm(): void{
     this.amountToMoney = !this.amountToMoney;
+  }
+
+  showListOfBeers(): void{
+    this.beerListModal.showModal();
   }
 }

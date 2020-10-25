@@ -1,0 +1,23 @@
+<ng-template #beerListModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-tittle beerModalTittle">Elige una cerveza</h4>
+    </div>
+    <div class="modal-body">
+        <ng-template ngFor let-beer [ngForOf]="beers" let-i="index">
+            <div class="card cardSpace">
+                <div class="card-body">
+                    <div class="beerRowTemplate">
+                        <img src={{beer.image}} width="80px" height="80px" class="beerImage">
+                        <div class="beerRowDetail">
+                            <h6><strong>{{beer.beer}}</strong></h6>
+                            <div class="beerRowDetailPriceContainer">
+                                <label>{{beer.container}}</label>
+                                <label>{{beer.price}}$</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</ng-template>

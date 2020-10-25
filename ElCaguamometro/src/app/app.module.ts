@@ -8,18 +8,23 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ValidationsDirective } from './directives/validations.directive';
+import { BeerListModalComponent } from './beer-list-modal/beer-list-modal.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     BeerConverterFormComponent,
-    ValidationsDirective
+    ValidationsDirective,
+    BeerListModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
