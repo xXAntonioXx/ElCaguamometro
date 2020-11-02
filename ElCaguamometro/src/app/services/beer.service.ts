@@ -13,7 +13,7 @@ export class BeerService {
     private http: HttpClient
   ) { }
 
-  getSpecificBeer(beerId: string): Observable<Beer>{
+  getSpecificBeer(beerId: String): Observable<Beer>{
     const specificBeerURL = `${this.beerURL}/showSpecificCaguamaPrice/${beerId}`;
     return this.http.get<Beer>(specificBeerURL);
   }

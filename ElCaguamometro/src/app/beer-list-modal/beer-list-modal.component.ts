@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild, Input } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { BeerService } from '../services/beer.service';
 import { Beer } from '../models/beer';
@@ -11,7 +11,8 @@ import { Beer } from '../models/beer';
 export class BeerListModalComponent implements OnInit {
 
   @ViewChild('beerListModal') modal: any;
-
+  @Output() beerId = new EventEmitter<String>();
+  @Input() selectedBeerId: String;
   beers: Beer[];
 
   constructor(
@@ -29,6 +30,15 @@ export class BeerListModalComponent implements OnInit {
 
   showModal(): void {
     this.modalService.open(this.modal, {ariaLabelledBy: 'modal-basic-title'});
+  }
+
+  closeModal(): void{
+    this.modalService.dismissAll();
+  }
+
+  beerSelectedClick(id: String): void{
+    this.beerId.emit(id);
+    this.closeModal();
   }
 
 }

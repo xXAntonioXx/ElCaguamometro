@@ -54,4 +54,4 @@
         </div>
     </ng-template>
 </div>
-<app-beer-list-modal #beerListModal></app-beer-list-modal>
+<app-beer-list-modal #beerListModal (beerId)="beerHasBeenSelected($event)" [selectedBeerId]="beer.id"></app-beer-list-modal>

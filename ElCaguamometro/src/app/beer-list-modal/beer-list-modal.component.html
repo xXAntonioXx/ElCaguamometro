@@ -2,22 +2,27 @@
     <div class="modal-header">
         <h4 class="modal-tittle beerModalTittle">Elige una cerveza</h4>
     </div>
-    <div class="modal-body">
+    <div class="modal-body bodyHeight">
         <ng-template ngFor let-beer [ngForOf]="beers" let-i="index">
-            <div class="card cardSpace">
-                <div class="card-body">
+            <div class="card bg-light cardSpace">
+                <div class="card-body" (click)="beerSelectedClick(beer.id)">
                     <div class="beerRowTemplate">
                         <img src={{beer.image}} width="80px" height="80px" class="beerImage">
                         <div class="beerRowDetail">
                             <h6><strong>{{beer.beer}}</strong></h6>
                             <div class="beerRowDetailPriceContainer">
-                                <label>{{beer.container}}</label>
-                                <label>{{beer.price}}$</label>
+                                <p>{{beer.container}}</p>
+                                <p>{{beer.price}}$</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </ng-template>
+    </div>
+    <div class="modal-footer">
+        <div class="footerAlignCenter">
+            <button type="button" class="btn btn-outline-primary text-nowrap" (click)="closeModal()">Cerrar</button>
+        </div>
     </div>
 </ng-template>

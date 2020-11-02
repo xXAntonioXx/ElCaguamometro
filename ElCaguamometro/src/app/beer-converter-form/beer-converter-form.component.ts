@@ -33,11 +33,19 @@ export class BeerConverterFormComponent implements OnInit {
     this.beerService.getBeers().subscribe(BeerRes => this.beer = BeerRes[0]);
   }
 
+  getBeerById(id: String): void{
+    this.beerService.getSpecificBeer(id).subscribe(BeerRes => this.beer = BeerRes[0])
+  }
+
   toggleForm(): void{
     this.amountToMoney = !this.amountToMoney;
   }
 
   showListOfBeers(): void{
     this.beerListModal.showModal();
+  }
+
+  beerHasBeenSelected(id: String): void{
+    this.getBeerById(id);
   }
 }

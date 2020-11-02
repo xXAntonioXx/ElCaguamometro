@@ -8,8 +8,10 @@
 }
 
 .beerRowTemplate{
+    position: relative;
     display: grid;
     grid-template-columns: 30% auto;
+    grid-column-gap: 10px;
 }
 
 .beerRowDetail{
@@ -24,4 +26,25 @@
 
 .cardSpace{
     margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.bodyHeight {
+    display: inline;
+    overflow-y: auto;
+    height: 100vw;
+}
+
+.footerAlignCenter {
+    width: 100%;
+    text-align: center;
+}
+
+.borderCard{
+    border: 5px solid black;
 }
