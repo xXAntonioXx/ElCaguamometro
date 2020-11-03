@@ -37,6 +37,7 @@ export class BeerListModalComponent implements OnInit {
   }
 
   beerSelectedClick(id: String): void{
+    this.selectedBeerId = id;
     this.beerId.emit(id);
     this.closeModal();
   }

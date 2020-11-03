@@ -1,8 +1,9 @@
 <div class="d-flex justify-content-center">
-    <div class="card bg-light widthCard" (click)="showListOfBeers()">
+    <div class="card bg-light widthCard">
         <div class="card-header text-center">
             <img src={{beer.image}} width="150px" height="150px" class="beerImage">
             <h6>Cerveza: {{beer.beer}}</h6>
+            <button type="button" class="btn btn-outline-dark" (click)="showListOfBeers()">Más cervezas...</button>
         </div>
     </div>
 </div>

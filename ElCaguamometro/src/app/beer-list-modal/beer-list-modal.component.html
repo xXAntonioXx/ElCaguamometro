@@ -4,7 +4,7 @@
     </div>
     <div class="modal-body bodyHeight">
         <ng-template ngFor let-beer [ngForOf]="beers" let-i="index">
-            <div class="card bg-light cardSpace">
+            <div [ngClass]="{'card':true, 'bg-light':true, 'cardSpace':true, 'borderCard': beer.id === selectedBeerId}">
                 <div class="card-body" (click)="beerSelectedClick(beer.id)">
                     <div class="beerRowTemplate">
                         <img src={{beer.image}} width="80px" height="80px" class="beerImage">
