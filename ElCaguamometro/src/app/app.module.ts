@@ -11,6 +11,7 @@ import { ValidationsDirective } from './directives/validations.directive';
 import { BeerListModalComponent } from './beer-list-modal/beer-list-modal.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ResultOutputComponent } from './result-output/result-output.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BeerConverterFormComponent,
     ValidationsDirective,
     BeerListModalComponent,
+    ResultOutputComponent,
   ],
   imports: [
     BrowserModule,

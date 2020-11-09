@@ -1,0 +1,9 @@
+.resultOutput {
+    width: 100%;
+    text-align: center;
+}
+
+.resultOutput h4 {
+    font-size: 140px;
+    font-family: OpenSans;
+}

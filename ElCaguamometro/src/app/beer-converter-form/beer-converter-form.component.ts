@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Beer } from '../models/beer';
 import { BeerService } from '../services/beer.service';
 import { BeerListModalComponent } from '../beer-list-modal/beer-list-modal.component';
@@ -11,6 +11,7 @@ import { BeerListModalComponent } from '../beer-list-modal/beer-list-modal.compo
 export class BeerConverterFormComponent implements OnInit {
 
   @ViewChild('beerListModal') beerListModal: BeerListModalComponent;
+
   beer: Beer = {
     id: 'CaguamonLight',
     beer: 'CaguamonLight',
@@ -20,13 +21,13 @@ export class BeerConverterFormComponent implements OnInit {
   };
 
   userBeerInput = 0;
-
-  amountToMoney = true;
+  mode:boolean; //'true' if is beer to money, 'false' if is money to beer
 
   constructor(private beerService: BeerService) { }
 
   ngOnInit(): void {
     this.getBeer();
+    this.mode = true;
   }
 
   getBeer(): void{
@@ -38,7 +39,7 @@ export class BeerConverterFormComponent implements OnInit {
   }
 
   toggleForm(): void{
-    this.amountToMoney = !this.amountToMoney;
+    this.mode = !this.mode
   }
 
   showListOfBeers(): void{
