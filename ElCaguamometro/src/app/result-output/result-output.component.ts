@@ -12,6 +12,7 @@ export class ResultOutputComponent implements OnInit,OnChanges {
   @Input('mode') mode: boolean;//'true' if is beer to money, 'false' if is money to beer
 
   valueOutput: number;
+  outputFontSize: number;
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +20,8 @@ export class ResultOutputComponent implements OnInit,OnChanges {
 
   ngOnChanges(): void{
     this.calculate();
+    this.resizeFont();
+    console.log(this.valueOutput);
   }
 
   beerToMoney(): number{
@@ -33,8 +36,13 @@ export class ResultOutputComponent implements OnInit,OnChanges {
     if(this.mode){
       this.valueOutput = this.valueInput * this.beerPrice;
     }else{
-      this.valueOutput = this.valueInput / this.beerPrice;
+      this.valueOutput = Math.floor(this.valueInput / this.beerPrice);
     }
+  }
+
+  resizeFont(): void{
+    const charSize = (Math.round(this.valueOutput).toString().length + 2);
+    this.outputFontSize = 420 / charSize
   }
 
 }
