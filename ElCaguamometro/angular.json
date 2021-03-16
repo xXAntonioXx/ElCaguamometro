@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ElCaguamometro"
+    }
+  },
+  "defaultProject": "ElCaguamometro",
+  "cli": {
+    "analytics": "ccabaeae-3b34-4be6-84d5-1bb1d2502747"
+  }
 }

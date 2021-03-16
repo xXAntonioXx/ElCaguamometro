@@ -21,7 +21,6 @@ export class ResultOutputComponent implements OnInit,OnChanges {
   ngOnChanges(): void{
     this.calculate();
     this.resizeFont();
-    console.log(this.valueOutput);
   }
 
   beerToMoney(): number{

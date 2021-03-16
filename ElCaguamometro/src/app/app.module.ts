@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { BeerConverterFormComponent } from './beer-converter-form/beer-converter-form.component';
 import { FormsModule } from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ValidationsDirective } from './directives/validations.directive';
 import { BeerListModalComponent } from './beer-list-modal/beer-list-modal.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ResultOutputComponent } from './result-output/result-output.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { AuthInterceptorInterceptor } from './interceptors/auth-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { ResultOutputComponent } from './result-output/result-output.component';
     ValidationsDirective,
     BeerListModalComponent,
     ResultOutputComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,13 @@ import { ResultOutputComponent } from './result-output/result-output.component';
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : AuthInterceptorInterceptor,
+      multi : true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
